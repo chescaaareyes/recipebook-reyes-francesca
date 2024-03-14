@@ -6,7 +6,7 @@ def recipes_list(request):
     ctx = {
         'recipes': recipes
     }
-    return render(request, 'recipes_list.html', ctx)
+    return render(request, 'ledger/recipes_list.html', ctx)
 
 def recipe(request, pk):
     recipe_name = Recipe.objects.get(pk=pk)
@@ -15,4 +15,4 @@ def recipe(request, pk):
         'recipe': recipe_name,
         'ingredients': ingredients
     }
-    return render(request, 'recipe.html', ctx)
+    return render(request, 'ledger/recipe.html', ctx)
