@@ -10,9 +10,21 @@
     {% endblock styles %}
   </head>
   <body>
+    <h1>Recipe Book</h1>
     <div>
       {% block content %}
       {% endblock content %}
+      {% block userflow %}
+        {% if user.is_authenticated %}
+          <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Logout</button>
+          </form>
+        {% else %}
+          <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+        {% endblock userflow %}
     </div>
     {% block scripts %}
     {% endblock scripts %}

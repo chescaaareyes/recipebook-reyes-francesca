@@ -3,8 +3,10 @@
 {% block title %}
   Recipes
 {% endblock title %}
+{% block location %}
+  Recipe List
+{% endblock location %}
 {% block content %}
-  <h1>Recipe Book</h1>
   <ul>
     {% for recipe in recipes %}
       <li>
