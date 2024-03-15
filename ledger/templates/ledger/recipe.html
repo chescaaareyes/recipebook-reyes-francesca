@@ -6,6 +6,7 @@
 {% block content %}
   <h1>Recipe Book</h1>
   <h2>{{ recipe }}</h2>
+  <p>By {{ recipe.author }}</p>
   <ul>
     {% for ingredient in ingredients %}
       <li>
